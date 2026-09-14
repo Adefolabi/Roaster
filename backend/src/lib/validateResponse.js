@@ -9,11 +9,19 @@ const zodSchema = z.object({
 
 const responseSchema = z.array(zodSchema);
 
+function stripCodeFence(text) {
+	const match = text
+		.trim()
+		.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/);
+
+	return match ? match[1] : text;
+}
+
 function validateResponse(response) {
 	let parsedResponse;
 
 	try {
-		parsedResponse = JSON.parse(response);
+		parsedResponse = JSON.parse(stripCodeFence(response));
 	} catch (error) {
 		console.error("Failed to parse Claude response as JSON:", error);
 		return null;
