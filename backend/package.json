@@ -1,0 +1,22 @@
+{
+  "name": "roast-my-cv-backend",
+  "version": "0.1.0",
+  "description": "Backend for Roast My CV — upload a resume, get a funny persona-driven roast plus real feedback and meme stickers.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^2.0.0",
+    "pdf-parse": "^1.1.1",
+    "zod": "^3.23.8"
+  }
+}
