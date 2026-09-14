@@ -44,3 +44,4 @@ function listStickerFiles(folder) {
 }
 
 module.exports = getSticker;
+module.exports.STICKERS_DIR = STICKERS_DIR;

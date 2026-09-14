@@ -54,7 +54,9 @@ curl http://localhost:3001/api/health
 - `POST /api/roast` — multipart form upload, field name `cv`. Runs the full
   pipeline: rate limit → extract text → build prompt → call Claude →
   validate response → attach stickers.
-- `POST /api/share-card` — stretch goal, not implemented yet.
+- `POST /api/share-card` — JSON body `{ findings: [{ category, roastLine, sticker? }], voice? }`
+  (the same shape returned by `/api/roast`, 1-6 findings). Renders a PNG
+  "roast card" image summarizing the findings, stickers, and persona voice.
 
 ### Project structure
 
